@@ -716,6 +716,8 @@ class TrainBottomSheet extends StatelessWidget {
               title: const Text('Seat reservations'),
               onTap: () {
                 Navigator.pop(ctx);
+                final carController = TextEditingController(text: train.car);
+                final seatsController = TextEditingController(text: train.seats);
                 showDialog(
                   context: context,
                   builder: (_) => StatefulBuilder(
@@ -726,13 +728,15 @@ class TrainBottomSheet extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           TextField(
-                            decoration: InputDecoration(labelText: 'Carriage', hintText: train.car),
-                            onChanged: (v) => setDialogState(() => train.car = v),
+                            controller: carController,
+                            decoration: const InputDecoration(labelText: 'Carriage'),
+                            onChanged: (v) => train.car = v,
                           ),
                           const SizedBox(height: 12),
                           TextField(
-                            decoration: InputDecoration(labelText: 'Seats', hintText: train.seats),
-                            onChanged: (v) => setDialogState(() => train.seats = v),
+                            controller: seatsController,
+                            decoration: const InputDecoration(labelText: 'Seats'),
+                            onChanged: (v) => train.seats = v,
                           ),
                         ],
                       ),
