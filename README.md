@@ -32,7 +32,7 @@ A Flutter app for planning interrail and holiday trips — manage destinations, 
 ### Setup
 
 ```bash
-git clone https://github.com/yourusername/interrail-planner.git
+git clone https://github.com/austinmorrey/Interrail-Planner-App.git
 cd interrail-planner
 flutter pub get
 flutter run
@@ -60,7 +60,3 @@ lib/
 
 - [ ] Refine timeline connector line behavior
 - [ ] Additional trip statistics / summary view
-
-## License
-
-_Add your license here._
